@@ -1,0 +1,33 @@
+<html>
+    <head></head>
+    <body>
+        <h1>Blog Posts</h1>
+
+        <h3>Add your post below 👇🏽</h3>
+        <form method="POST" action="/post/create-post">
+            <input type="text" placeholder="Title" name="title">
+            <input type="text" placeholder="Content" name="body"> 
+            <button>Add</button>
+
+        </form>
+
+        <ul>
+            {{#posts}}
+                <li>
+                    <form method="POST" action="/delete-post">
+                        <h3>{{title}}</h3>
+                        <p>{{body}}</p>
+
+                        <p> Date Created: {{date_created}}</p>
+                        <p>Date Updated: {{date_updated}}</p>
+                        <input type="hidden" value={{post_id}} name="post_id">
+                        <button>Delete</button>
+                    </form>
+                    <a href="/update-post/{{post_id}}"><button>Update</button></a>
+                </li> 
+            {{/posts}}
+        
+        </ul>
+    
+    </body>
+</html>

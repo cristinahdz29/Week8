@@ -1,0 +1,15 @@
+<html>
+    <head></head>
+    <body>
+
+        <h1>Update Post</h1>
+
+    {{#post}}
+        <form method="POST" action="/update-post/{{post_id}}">
+        <input type="text" value="{{title}}" name="title">
+        <input type ="text" value="{{body}}" name="body">
+        <button>Save</button>
+        </form>
+    {{/post}}
+    </body>
+</html>
