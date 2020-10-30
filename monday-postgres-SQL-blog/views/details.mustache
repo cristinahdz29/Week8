@@ -1,0 +1,38 @@
+<html>
+    <head></head>
+    <body>
+        <h1>POST DETAILS</h1>
+
+        <ul>
+            {{#postDetails}} 
+                <li>
+                    <h3>{{title}}</h3>
+                    <p>{{post_body}}</p>
+                    <p>Posted: {{post_date_created}}</p>
+                    <p>Updated: {{post_date_updated}}</p>
+                    
+                    <form method="POST" action="/post/{{post_id}}/new-comment">
+                    <h4>Drop a comment 📬</h4>
+                    
+                    <textarea placeholder="What'd you think?" rows="5" cols="50" name="newComment"></textarea>
+                    <input type="submit" value="submit">
+                    </form>
+                    
+                    <h4>Comments 📣</h4>
+                    <div>
+                        {{#commentaries}}
+                    
+                            <div>
+                                <i><p>{{comment_body}}</p></i>
+                                <p>Added on: {{date_created}}</p>
+                            </div>
+                        {{/commentaries}}
+                    </div>
+                </li>
+
+
+            {{/postDetails}}
+
+        </ul>
+    </body>
+</html>

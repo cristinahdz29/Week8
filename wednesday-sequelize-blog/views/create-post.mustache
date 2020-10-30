@@ -1,0 +1,27 @@
+<html>
+    <head></head>
+    <body>
+        <h1>Blog Posts</h1>
+
+        <h3>Add your post below 👇🏽</h3>
+        <form method="POST" action="/create-post">
+            <input type="text" placeholder="Title" name="title"> <br>
+            <textarea placeholder="Content" rows="5" cols="50" name="newPost"></textarea>
+            <br>
+
+            {{! dropdown menu for category }}
+            <select name="category" id="category">
+                <option value="">Select category</option>
+                <option value="plants">Plants</option>
+                <option value="pets">Pets</option>
+
+            </select>
+            {{! <input type="text" placeholder="category" name="category"> }}
+
+            <input type="submit" value="submit">
+            <br>
+            {{! <input type="text" placeholder="Content" name="body"> 
+            <button>Add</button> }}
+
+        </form>
+</html>

@@ -5,17 +5,20 @@
 
         <h3>Add your post below 👇🏽</h3>
         <form method="POST" action="/post/create-post">
-            <input type="text" placeholder="Title" name="title">
-            <input type="text" placeholder="Content" name="body"> 
-            <button>Add</button>
+            <input type="text" placeholder="Title" name="title"> <br>
+            <textarea placeholder="Content" rows="5" cols="50" name="newPost"></textarea>
+            <input type="submit" value="submit">
+            <br>
+            {{! <input type="text" placeholder="Content" name="body"> 
+            <button>Add</button> }}
 
         </form>
-
+        <h3>Click on the title to see the full post! 😎</h3>
         <ul>
             {{#posts}}
                 <li>
                     <form method="POST" action="/delete-post">
-                        <h3>{{title}}</h3>
+                        <a href="/posts/{{post_id}}/comments" target="_blank"><h3>{{title}}</h3></a>
                         <p>{{body}}</p>
 
                         <p> Date Created: {{date_created}}</p>
